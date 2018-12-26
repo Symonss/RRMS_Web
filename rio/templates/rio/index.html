@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/w3.css' %}">
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
         <title>Rio Caterers Kisumu</title>
     </head>
@@ -17,12 +18,12 @@
         <header>
             <nav>
                 <div class="row">
-                    <img src="{% static 'images/logo-white.png' %}" alt="Omnifood logo" class="logo">
-                    <img src="resources/img/logo.png" alt="Omnifood logo" class="logo-black">
+                    <img src="{% static 'images/juice.jpg' %}" alt="Rio logo" class="w3-circle logo">
+                    <img src="{% static 'images/juice.jpg' %}" alt="Rio logo" class="logo-black">
                     <ul class="main-nav js--main-nav">
                         <li><a href="#features">Food delivery</a></li>
                         <li><a href="#works">How it works</a></li>
-                        <li><a href="#cities">Our cities</a></li>
+                        <li><a href="#cities">Our Menu</a></li>
                         <li><a href="#plans">Sign up</a></li>
                     </ul>
                     <a class="mobile-nav-icon  js--nav-icon"><i class="ion-navicon-round"></i></a>
@@ -38,7 +39,7 @@
 
         <section class="section-features js--section-features" id="features">
             <div class="row">
-                <h2>Get food fast &mdash; Whenever you need it</h2>
+                <h2>Get food fast &mdash; Not First food</h2>
                 <p class="long-copy">
                     Hello, we're Rio Caterers, your new premium Snack delivery s
                     ervice. We know you're always busy. No time for cooking. So let
@@ -85,53 +86,102 @@
             </div>
         </section>
 
-        <h2>Gallery</h2>
-        <section class="section-meals">
-            <ul class="meals-showcase clearfix">
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/1.jpg" alt="Korean bibimbap with egg and vegetables">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/2.jpg" alt="Simple italian pizza with cherry tomatoes">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/3.jpg" alt="Chicken breast steak with vegetables">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/4.jpg" alt="Autumn pumpkin soup">
-                    </figure>
-                </li>
-            </ul>
-            <ul class="meals-showcase clearfix">
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/5.jpg" alt="Paleo beef steak with vegetables">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/6.jpg" alt="Healthy baguette with egg and vegetables">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/7.jpg" alt="Burger with cheddar and bacon">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/8.jpg" alt="Granola with cherries and strawberries">
-                    </figure>
-                </li>
-            </ul>
+
+        <section>
+          <!-- Menu Container -->
+          <div class="w3-container" id="menu">
+            <div class="w3-content" style="max-width:700px">
+
+              <h2 class="w3-center">Our MENU</h2>
+
+              <div class="w3-row w3-center w3-card w3-padding">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+                  <div class="w3-col s6 tablink">Bites</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+                  <div class="w3-col s6 tablink">Drinks</div>
+                </a>
+              </div>
+
+              <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+                <h5><b>Rio Samosa</b></h5>
+                <p class="w3-text-grey"><i>Carefully made samosas that leaves you satisfied</i> <span><b>Ksh.50</b></span></p><br>
+
+              </div>
+
+              <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+                <h5>Coffee</h5>
+                <p class="w3-text-grey">Regular coffee 2.50</p><br>
+
+              </div>
+
+            </div>
+          </div>
+
         </section>
+
+
+      <h2>Gallery</h2>
+
+        <div class="w3-row-padding w3-margin-top">
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/juice.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>Fresh Juice</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/pizza.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>Rio Pizza</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/samosa.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>Rio Samosas</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w3-row-padding w3-margin-top">
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/chicken.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>Rio Chicken</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/cabbab.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>Kebabs</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-third">
+            <div class="w3-card">
+              <img src="{% static 'images/chips.jpg' %}" style="width:100%">
+              <div class="w3-container">
+                <h5>French Fries</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 
 
         <section class="section-steps" id="works">
@@ -424,6 +474,25 @@ I was looking for a quick and easy food delivery service in San Franciso. I trie
             </div>
         </footer>
 
+
+
+        <script>
+        // Tabbed Menu
+        function openMenu(evt, menuName) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("menu");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+          }
+          document.getElementById(menuName).style.display = "block";
+          evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+        }
+        document.getElementById("myLink").click();
+        </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
     <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
