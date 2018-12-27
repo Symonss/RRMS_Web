@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/w3.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
         <title>Rio Caterers Kisumu</title>
     </head>
@@ -23,10 +24,10 @@
                     <ul class="main-nav js--main-nav">
                         <li><a href="#features">Food delivery</a></li>
                         <li><a href="#works">How it works</a></li>
-                        <li><a href="#cities">Our Menu</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
                         <li><a href="#plans">Sign up</a></li>
                     </ul>
-                    <a class="mobile-nav-icon  js--nav-icon"><i class="ion-navicon-round"></i></a>
+                    <a class="mobile-nav-icon  js--nav-icon"><i class="fa fa-bars"></i></a>
                 </div>
             </nav>
             <div class="hero-text-box">
@@ -52,7 +53,7 @@
                 </p>
             </div>
 
-            <div class="row js--wp-1">
+            <div class="row js--wp-"><!-- TODO: add 1 for animation -->
                 <div class="col span-1-of-4 box">
                     <i class="ion-ios-infinite-outline icon-big"></i>
                     <h3>Up to 365 days/year</h3>
@@ -104,17 +105,18 @@
               </div>
 
               <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-                <h5><b>Rio Samosa</b></h5>
-                <p class="w3-text-grey"><i>Carefully made samosas that leaves you satisfied</i> <span><b>Ksh.50</b></span></p><br>
-
+                {% for bite in bites %}
+                <h5><b>{{bite.name}}</b></h5>
+                <p class="w3-text-grey"><i>Carefully made samosas that leaves you satisfied</i> <span><b>Ksh.{{bite.price}}</b></span></p><br>
+                {% endfor %}
               </div>
 
               <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-                <h5>Coffee</h5>
-                <p class="w3-text-grey">Regular coffee 2.50</p><br>
-
+                {% for drink in drinks %}
+                <h5><b>{{drink.name}} (250ml)</b></h5>
+                <p class="w3-text-grey"><i>naturally made.........................@ </i><span><b>Ksh.{{drink.price}}</b></span> </p><br>
+                {% endfor %}
               </div>
-
             </div>
           </div>
 
@@ -128,7 +130,7 @@
             <div class="w3-card">
               <img src="{% static 'images/juice.jpg' %}" style="width:100%">
               <div class="w3-container">
-                <h5>Fresh Juice</h5>
+                <h5>Rio Fresh Smoothy</h5>
               </div>
             </div>
           </div>
@@ -190,7 +192,7 @@
             </div>
             <div class="row">
                 <div class="col span-1-of-2 steps-box">
-                    <img src="resources/img/app-iPhone.png" alt="Omnifood app on iPhone" class="app-screen js--wp-2">
+                    <img src="{% static 'images/app.png' %}" alt="rio mobile app" class="app-screen js--wp-"><!-- TODO: add 2 -->
                 </div>
                 <div class="col span-1-of-2 steps-box">
                     <div class="works-step clearfix">
@@ -219,7 +221,7 @@
             <div class="row">
                 <h2>We're currently in these cities</h2>
             </div>
-            <div class="row js--wp-3">
+            <div class="row js--wp-"><!-- TODO: add 3 for animation -->
                 <div class="col span-1-of-4 box">
                     <img src="resources/img/lisbon-3.jpg" alt="Lisbon">
                     <h3>Kisumu</h3>
@@ -459,17 +461,17 @@ I was looking for a quick and easy food delivery service in San Franciso. I trie
                 </div>
                 <div class="col span-1-of-2">
                     <ul class="social-links">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>
             <div class="row">
 
                 <p>
-                    Build with <i class="ion-ios-heart" style="color: #ea0000; padding: 0 3px;"></i> by Symons 2018.
+                    Build with <i class="fa fa-heart" style="color: #ea0000; padding: 0 3px;"></i> by Symons 2018.
                 </p>
             </div>
         </footer>

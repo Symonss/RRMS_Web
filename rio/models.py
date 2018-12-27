@@ -14,6 +14,7 @@ class Item(models.Model):
     name = models.CharField(max_length = 50)
     price = models.IntegerField()
     pic_link = models.CharField(max_length=70)
+    is_adrink = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -48,5 +49,6 @@ class Message(models.Model):
     def read(self):
         self.is_read = true
         self.save()
-
+    def __str__(self):
+        return self.name
 # oders object
